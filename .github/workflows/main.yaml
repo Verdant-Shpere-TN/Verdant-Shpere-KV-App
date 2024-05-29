@@ -1,5 +1,6 @@
 name : "main workflow"
 
+# trigger
 on: 
   pull_request:
     branch:
@@ -10,7 +11,11 @@ jobs:
     name: "Build laravel App"
     runs-on: ubuntu-latest
     steps:
-      - name: Hello
+      - name: Install dependencies
         run: |
-          echo "hello"
+          composer install
+
+      - name: Build the Application
+        run: |
+          php artisan key:generate
 
