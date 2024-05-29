@@ -1,7 +1,7 @@
 name : "main workflow"
 
 on: 
-  pull reqeust:
+  pull request:
     branch:
       - dev
 
