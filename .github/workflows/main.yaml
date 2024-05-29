@@ -10,7 +10,7 @@ jobs:
     name: "Build laravel App"
     runs-on: ubuntu-latest
     steps:
-      -name: Hello
+      - name: Hello
         run: |
-          echo "hello world"
+          echo "hello"
 
