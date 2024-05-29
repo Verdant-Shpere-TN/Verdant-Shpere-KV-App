@@ -1,0 +1,45 @@
+name : "main workflow"
+
+# trigger
+on: 
+  pull_request:
+    branch:
+      - dev
+
+jobs:
+  build:
+    name: "Build laravel App"
+    runs-on: ubuntu-latest
+    steps:
+
+
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name : checkout 
+        uses: actions/checkout@v4
+
+      
+
+      - name: Install dependencies
+        run: |
+          composer install
+
+
+      - name: Setup Env
+        run : |
+          cp .env.ci .env
+
+      - name: show directory 
+        run : |
+         pwd
+         ls -la
+
+      
+
+      - name: Build the Application
+        run: |
+          php artisan key:generate
+
