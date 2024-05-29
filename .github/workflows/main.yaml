@@ -24,8 +24,8 @@ jobs:
 
       - name : show current directory 
         run: |
-        pwd
-        ls -la
+          pwd
+          ls -la
 
       - name: Install dependencies
         run: |
