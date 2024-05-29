@@ -15,7 +15,7 @@ jobs:
 
       - name: composer install
         run: |
-          sudo apt install php-cku unzip
+          sudo apt install php-cli unzip
           cd ~
           curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
           HASH=`curl -sS https://composer.github.io/installer.sig`
