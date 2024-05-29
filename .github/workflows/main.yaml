@@ -27,6 +27,16 @@ jobs:
         run: |
           composer install
 
+
+      - name: Setup Env
+        run : |
+          cp .env.ci .env
+
+      - name: show directory 
+        run : |
+         pwd
+         ls -la
+
       
 
       - name: Build the Application
